@@ -101,6 +101,8 @@ img, svg { display: block; }
 .button svg { width: 18px; fill: none; stroke: currentColor; stroke-width: 1.8; }
 .button-primary { background: var(--electric); color: var(--ink); box-shadow: 0 14px 30px rgba(245,158,11,.16); }
 .button-primary:hover { transform: translateY(-2px); background: #b0ffd8; box-shadow: 0 18px 38px rgba(245,158,11,.22); }
+@keyframes fit-pulse { 0%, 100% { box-shadow: 0 14px 30px rgba(245,158,11,.18); } 50% { box-shadow: 0 14px 44px rgba(245,158,11,.55), 0 0 0 8px rgba(245,158,11,.08); } }
+.fit-cta-btn { animation: fit-pulse 2.2s ease-in-out infinite; }
 .button-secondary { color: var(--white); border-color: rgba(255,255,255,.19); background: rgba(255,255,255,.04); }
 .button-secondary:hover { border-color: rgba(255,255,255,.4); background: rgba(255,255,255,.08); }
 .hero-proof { display: flex; gap: 36px; margin-top: 44px; padding-top: 27px; border-top: 1px solid rgba(255,255,255,.11); }
@@ -679,12 +681,6 @@ body { background: var(--paper); }
             <span>Good fit signal</span>
             <strong>If a process is slow, manual, or leaking revenue, it is a candidate for AI.</strong>
           </div>
-          <div style="margin-top:36px; display:flex; justify-content:center;">
-            <a class="button button-primary" href="#contact" style="font-size:16px; padding:0 36px; min-height:58px; border-radius:12px;">
-              Book your first AI conversation
-              <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h11M11 5l5 5-5 5"/></svg>
-            </a>
-          </div>
         </div>
 
         <div class="industry-stack reveal reveal-delay-1">
@@ -705,6 +701,12 @@ body { background: var(--paper); }
             <div><h3>Your industry</h3><p>The starting point is not the sector. It is the bottleneck and the measurable outcome.</p></div>
           </div>
         </div>
+      </div>
+      <div style="display:flex; justify-content:center; margin-top:56px;">
+        <a class="button button-primary fit-cta-btn" href="#contact" style="font-size:16px; padding:0 40px; min-height:58px; border-radius:12px;">
+          Book your first AI conversation
+          <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h11M11 5l5 5-5 5"/></svg>
+        </a>
       </div>
     </section>
 
