@@ -67,17 +67,7 @@ img, svg { display: block; }
 .brand-type { font-size: 29px; font-weight: 800; letter-spacing: .04em; font-family: Helvetica, Arial, sans-serif; }
 .brand-type em { font-style: italic; font-weight: 800; color: #1a3a5c; }
 .brand-type strong { color: var(--electric); font-weight: 800; font-style: normal; letter-spacing: .06em; }
-.brand-mark { width: 30px; height: 30px; position: relative; display: inline-block; }
-.brand-mark span {
-  position: absolute;
-  width: 8px;
-  border: 2px solid var(--electric);
-  border-radius: 8px;
-  transform: rotate(28deg);
-}
-.brand-mark span:nth-child(1) { left: 2px; top: 4px; height: 21px; }
-.brand-mark span:nth-child(2) { left: 11px; top: 0; height: 27px; }
-.brand-mark span:nth-child(3) { right: 2px; top: 7px; height: 19px; }
+.brand-mark { display: flex; align-items: center; flex-shrink: 0; }
 
 .main-nav { display: flex; align-items: center; gap: 30px; }
 .main-nav > a { color: rgba(255,255,255,.72); font-size: 14px; font-weight: 600; transition: .25s ease; }
@@ -470,7 +460,10 @@ body { background: var(--paper); }
     <div class="container nav-wrap">
       <a class="brand" href="#top" aria-label="SHEV AI home">
         <span class="brand-mark" aria-hidden="true">
-          <span></span><span></span><span></span>
+          <svg width="26" height="32" viewBox="0 0 26 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <defs><linearGradient id="sg" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#ffc857"/><stop offset="100%" stop-color="#e88712"/></linearGradient></defs>
+            <path d="M21 4 L5 4 L5 15 L21 15 L21 28 L5 28" stroke="url(#sg)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+          </svg>
         </span>
         <span class="brand-type"><em>Shev</em> <strong>AI</strong></span>
       </a>
@@ -786,7 +779,12 @@ body { background: var(--paper); }
     <div class="container footer-grid">
       <div>
         <a class="brand brand-footer" href="#top">
-          <span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span></span>
+          <span class="brand-mark" aria-hidden="true">
+            <svg width="26" height="32" viewBox="0 0 26 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <defs><linearGradient id="sg2" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#ffc857"/><stop offset="100%" stop-color="#e88712"/></linearGradient></defs>
+              <path d="M21 4 L5 4 L5 15 L21 15 L21 28 L5 28" stroke="url(#sg2)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+            </svg>
+          </span>
           <span class="brand-type"><em>Shev</em> <strong>AI</strong></span>
         </a>
         <p>AI implementation for growing businesses.</p>
