@@ -91,7 +91,7 @@ img, svg { display: block; }
 .eyebrow, .kicker { text-transform: uppercase; font-size: 12px; font-weight: 750; letter-spacing: .16em; }
 .eyebrow { display: flex; align-items: center; gap: 10px; color: rgba(255,255,255,.68); }
 .hero .eyebrow { font-size: 22px; font-style: italic; font-weight: 400; letter-spacing: .06em; text-transform: none; font-family: 'Georgia', 'Times New Roman', serif; }
-.eyebrow span { width: 26px; height: 1px; background: var(--electric); }
+.eyebrow span { width: 44px; height: 2px; background: var(--electric); flex-shrink: 0; }
 .hero h1 { margin: 22px 0 24px; font-size: clamp(58px, 7vw, 94px); line-height: .96; letter-spacing: -.055em; font-weight: 760; }
 .hero h1 em { color: var(--electric); font-style: normal; font-weight: 520; }
 .hero-lead { max-width: 670px; margin: 0; color: rgba(255,255,255,.7); font-size: 19px; line-height: 1.7; font-style: italic; }
@@ -374,7 +374,7 @@ body { background: var(--paper); }
   color: var(--ink);
 }
 .eyebrow { color: rgba(7, 17, 31, .58); }
-.eyebrow span { background: var(--brand); }
+.eyebrow span { background: var(--brand); width: 44px; height: 2px; }
 .hero h1 em { color: var(--brand); font-weight: 560; }
 .hero-lead { color: #6b7280; font-style: italic; }
 .hero-lead .hero-action { color: var(--brand); font-style: normal; }
@@ -492,7 +492,7 @@ body { background: var(--paper); }
 
       <div class="container hero-grid">
         <div class="hero-copy reveal">
-          <div class="eyebrow">AI implementation for growing businesses</div>
+          <div class="eyebrow"><span></span> AI implementation for growing businesses <span></span></div>
           <h1>Put AI to work.<br /><em>Make the return visible.</em></h1>
           <p class="hero-lead">
             Most growing businesses are sitting on AI opportunities they haven't spotted yet. We <em class="hero-action">find</em> them, prioritise the <em class="hero-action">best</em> one, and <em class="hero-action">build</em> it into something that pays for itself — quickly.
