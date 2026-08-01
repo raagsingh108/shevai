@@ -74,6 +74,7 @@ img, svg { display: block; }
 .main-nav > a:hover { color: var(--white); }
 .main-nav .nav-cta { color: var(--ink); background: var(--electric); padding: 12px 18px; border-radius: 999px; }
 .main-nav .nav-cta:hover { color: var(--ink); transform: translateY(-1px); }
+.nav-right { display: flex; align-items: center; gap: 10px; }
 .menu-toggle { display: none; border: 0; background: none; width: 44px; height: 44px; padding: 12px; }
 .menu-toggle span { display: block; height: 2px; width: 100%; background: var(--white); margin: 6px 0; transition: .25s ease; }
 
@@ -296,7 +297,7 @@ img, svg { display: block; }
   }
   .main-nav.open { transform: translateX(0); }
   .main-nav > a { font-size: 16px; padding: 18px 6px; border-bottom: 1px solid rgba(255,255,255,.08); }
-  .main-nav .nav-cta { margin-top: 18px; text-align: center; border-bottom: 0; padding: 16px; }
+  .nav-cta { font-size: 11px; padding: 9px 12px; }
   .menu-toggle.active span:first-child { transform: translateY(4px) rotate(45deg); }
   .menu-toggle.active span:last-child { transform: translateY(-4px) rotate(-45deg); }
   .hero { min-height: auto; padding: 130px 0 76px; }
@@ -473,16 +474,18 @@ body { background: var(--paper); }
         <span class="brand-type"><em>Shev</em> <strong>AI</strong></span>
       </a>
 
-      <button class="menu-toggle" aria-expanded="false" aria-controls="main-nav" aria-label="Open navigation">
-        <span></span><span></span>
-      </button>
+      <div class="nav-right">
+        <a class="nav-cta" href="https://wa.me/919148310035?text=Hi%2C%20I%27d%20like%20to%20book%20a%20discovery%20call%20with%20SHEV%20AI" target="_blank" rel="noopener">Call or WhatsApp</a>
+        <button class="menu-toggle" aria-expanded="false" aria-controls="main-nav" aria-label="Open navigation">
+          <span></span><span></span>
+        </button>
+      </div>
 
       <nav class="main-nav" id="main-nav" aria-label="Primary navigation">
         <a href="#services">What we build</a>
         <a href="#process">How we work</a>
         <a href="#fit">Who we help</a>
         <a href="#why">Why SHEV</a>
-        <a class="nav-cta" href="https://wa.me/919148310035?text=Hi%2C%20I%27d%20like%20to%20book%20a%20discovery%20call%20with%20SHEV%20AI" target="_blank" rel="noopener">Call or WhatsApp</a>
       </nav>
     </div>
   </header>
