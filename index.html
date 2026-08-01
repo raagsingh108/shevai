@@ -64,8 +64,9 @@ img, svg { display: block; }
 }
 .nav-wrap { min-height: 76px; display: flex; align-items: center; justify-content: space-between; }
 .brand { display: inline-flex; align-items: center; gap: 12px; color: var(--white); }
-.brand-type { font-size: 18px; font-weight: 750; letter-spacing: .13em; }
-.brand-type strong { color: var(--electric); }
+.brand-type { font-size: 24px; font-weight: 400; letter-spacing: .04em; font-family: Helvetica, Arial, sans-serif; }
+.brand-type em { font-style: italic; font-weight: 400; }
+.brand-type strong { color: var(--electric); font-weight: 800; font-style: normal; letter-spacing: .06em; }
 .brand-mark { width: 30px; height: 30px; position: relative; display: inline-block; }
 .brand-mark span {
   position: absolute;
@@ -471,7 +472,7 @@ body { background: var(--paper); }
         <span class="brand-mark" aria-hidden="true">
           <span></span><span></span><span></span>
         </span>
-        <span class="brand-type">SHEV <strong>AI</strong></span>
+        <span class="brand-type"><em>Shev</em> <strong>AI</strong></span>
       </a>
 
       <button class="menu-toggle" aria-expanded="false" aria-controls="main-nav" aria-label="Open navigation">
@@ -786,7 +787,7 @@ body { background: var(--paper); }
       <div>
         <a class="brand brand-footer" href="#top">
           <span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span></span>
-          <span class="brand-type">SHEV <strong>AI</strong></span>
+          <span class="brand-type"><em>Shev</em> <strong>AI</strong></span>
         </a>
         <p>AI implementation for growing businesses.</p>
       </div>
