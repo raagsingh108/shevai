@@ -118,7 +118,26 @@ img, svg { display: block; }
 .system-topbar { height: 55px; display: flex; align-items: center; gap: 10px; padding: 0 18px; border-bottom: 1px solid rgba(255,255,255,.09); color: rgba(255,255,255,.7); font-size: 12px; font-weight: 650; }
 .status-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--electric); box-shadow: 0 0 14px var(--electric); }
 .system-live { margin-left: auto; padding: 4px 8px; border-radius: 99px; color: var(--electric); background: rgba(255,200,87,.08); font-size: 9px; letter-spacing: .14em; }
-.system-body { padding: 24px; flex: 1; display: flex; flex-direction: column; justify-content: center; gap: 22px; }
+.system-body { padding: 22px; flex: 1; display: flex; flex-direction: column; justify-content: space-between; gap: 16px; }
+.hero-chart { border: 1px solid rgba(255,255,255,.1); background: rgba(255,255,255,.02); border-radius: 15px; padding: 14px 16px 8px; }
+.chart-head { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 4px; }
+.chart-head span { color: rgba(255,255,255,.5); font-size: 10.5px; letter-spacing: .03em; }
+.chart-head b { color: #ffc857; font-size: 13px; font-weight: 700; letter-spacing: -.01em; }
+.chart-svg { display: block; width: 100%; height: 92px; }
+.chart-line { stroke-dasharray: 900; stroke-dashoffset: 900; animation: chartDraw 1.9s ease-out .2s forwards; }
+.chart-dot { opacity: 0; animation: chartDotIn .4s ease-out 2s forwards, chartDotPulse 2.4s ease-in-out 2.4s infinite; }
+@keyframes chartDraw { to { stroke-dashoffset: 0; } }
+@keyframes chartDotIn { to { opacity: 1; } }
+@keyframes chartDotPulse { 0%,100% { r: 4; } 50% { r: 6; } }
+.activity-feed { display: flex; flex-direction: column; gap: 2px; }
+.feed-row { display: flex; align-items: center; gap: 10px; padding: 8px 11px; border-radius: 9px; font-size: 11px; color: rgba(255,255,255,.55); }
+.feed-row:first-child { background: rgba(255,200,87,.06); color: rgba(255,255,255,.85); }
+.feed-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--electric); flex: none; }
+.feed-row:first-child .feed-dot { box-shadow: 0 0 8px var(--electric); animation: feedPulse 1.8s ease-in-out infinite; }
+.feed-text { flex: 1; }
+.feed-time { color: rgba(255,255,255,.38); font-size: 10px; }
+@keyframes feedPulse { 0%,100% { opacity: 1; transform: scale(1); } 50% { opacity: .5; transform: scale(1.35); } }
+@media (prefers-reduced-motion: reduce) { .chart-line { animation: none; stroke-dashoffset: 0; } .chart-dot { animation: none; opacity: 1; } .feed-row:first-child .feed-dot { animation: none; } }
 .metric-card { border: 1px solid rgba(255,255,255,.1); background: rgba(255,255,255,.035); border-radius: 15px; padding: 20px; }
 .metric-label { display: block; color: rgba(255,200,120,.72); font-size: 10px; text-transform: uppercase; letter-spacing: .15em; margin-bottom: 8px; }
 .metric-card > strong { display: block; color: #fff; font-size: 22px; font-weight: 700; letter-spacing: -.01em; margin-bottom: 20px; }
@@ -526,6 +545,21 @@ body { background: var(--paper); }
             </div>
 
             <div class="system-body">
+              <div class="hero-chart">
+                <div class="chart-head"><span>Return on AI · last 90 days</span><b>▲ 3.2× ROI</b></div>
+                <svg class="chart-svg" viewBox="0 0 520 110" preserveAspectRatio="none" aria-hidden="true">
+                  <defs>
+                    <linearGradient id="heroChartFill" x1="0" y1="0" x2="0" y2="1">
+                      <stop offset="0" stop-color="#ffc857" stop-opacity=".26"/>
+                      <stop offset="1" stop-color="#ffc857" stop-opacity="0"/>
+                    </linearGradient>
+                  </defs>
+                  <path class="chart-area" d="M0,94 L58,88 L116,92 L174,74 L232,80 L290,58 L348,62 L406,36 L464,28 L520,14 L520,110 L0,110 Z" fill="url(#heroChartFill)"/>
+                  <path class="chart-line" d="M0,94 L58,88 L116,92 L174,74 L232,80 L290,58 L348,62 L406,36 L464,28 L520,14" fill="none" stroke="#ffc857" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  <circle class="chart-dot" cx="520" cy="14" r="4" fill="#ffc857"/>
+                </svg>
+              </div>
+
               <div class="metric-card metric-main">
                 <span class="metric-label">The outcome</span>
                 <strong>Less busywork. More growth.</strong>
@@ -556,6 +590,12 @@ body { background: var(--paper); }
                 <div><span>Expertise</span><strong>Enterprise-grade</strong></div>
                 <div><span>Speed</span><strong>Fast to deploy</strong></div>
                 <div><span>Priority</span><strong>ROI-first</strong></div>
+              </div>
+
+              <div class="activity-feed" aria-hidden="true">
+                <div class="feed-row"><span class="feed-dot"></span><span class="feed-text">Lead captured &amp; qualified</span><span class="feed-time">now</span></div>
+                <div class="feed-row"><span class="feed-dot"></span><span class="feed-text">Customer reply sent automatically</span><span class="feed-time">3s ago</span></div>
+                <div class="feed-row"><span class="feed-dot"></span><span class="feed-text">Weekly ROI report generated</span><span class="feed-time">1m ago</span></div>
               </div>
             </div>
           </div>
